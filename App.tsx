@@ -85,16 +85,16 @@ export default function App() {
                 alt="Jens Drake - Bürgermeisterkandidat" 
                 className="w-full h-full object-cover rounded-2xl"
               />
-              {/* Overlay Badge */}
-              <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md p-4 rounded-xl shadow-lg border border-white/50 flex items-center justify-between">
+              {/* Overlay Badge - Jetzt klickbar */}
+              <a href="#about" className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md p-4 rounded-xl shadow-lg border border-white/50 flex items-center justify-between group cursor-pointer hover:bg-white transition-colors">
                 <div>
                   <p className="font-bold text-slate-900">Jens Drake</p>
                   <p className="text-sm text-slate-500">Ihr Bürgermeisterkandidat</p>
                 </div>
-                <div className="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
                   <ArrowRight size={20} />
                 </div>
-              </div>
+              </a>
             </div>
             {/* Decor Element */}
             <div className="absolute -z-10 top-8 -right-8 w-full h-full rounded-3xl bg-slate-900"></div>
