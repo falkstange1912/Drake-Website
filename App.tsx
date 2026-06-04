@@ -1,5 +1,6 @@
 import React from 'react';
 import { Building, Users, MessageCircle, Shield } from 'lucide-react';
+import portrait from './portrait.jpg';
 
 export default function App() {
   return (
@@ -26,11 +27,13 @@ export default function App() {
           </p>
         </div>
         
-        {/* Bild-Bereich (Platzhalter) */}
+        {/* Bild-Bereich */}
         <div className="flex-1 bg-neutral-100 relative min-h-[50vh] lg:min-h-full">
-          <div className="absolute inset-0 flex items-center justify-center text-neutral-400 text-sm tracking-widest uppercase">
-            [ Hier kommt das Porträtfoto hin ]
-          </div>
+          <img 
+            src={portrait} 
+            alt="Jens Drake - Bürgermeisterkandidat Cremlingen" 
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
         </div>
       </section>
 
@@ -122,4 +125,3 @@ export default function App() {
     </div>
   );
 }
-
