@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion, useScroll, useSpring } from 'motion/react';
+import { motion, useScroll, useSpring, useTransform } from 'motion/react';
 import { Building, Users, MessageCircle, Shield, ArrowRight, Heart, MapPin } from 'lucide-react';
 import portrait from './portrait.jpg';
 
@@ -23,6 +23,9 @@ export default function App() {
     damping: 30,
     restDelta: 0.001
   });
+  
+  // Parallax für das Bild beim Scrollen
+  const imgY = useTransform(scrollYProgress, [0, 1], [0, -80]);
 
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-red-600 selection:text-white overflow-hidden">
@@ -105,19 +108,21 @@ export default function App() {
           
           <motion.div 
             className="flex-1 w-full max-w-lg relative"
-            initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            initial={{ opacity: 0, scale: 0.8, rotate: 5, y: 50 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0, y: 0 }}
+            transition={{ duration: 1.5, type: "spring", bounce: 0.4 }}
           >
             <motion.div 
-              animate={{ y: [-10, 10, -10] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="relative rounded-3xl overflow-hidden shadow-2xl bg-white p-2 z-10 aspect-[4/5]"
+              animate={{ y: [-8, 8, -8] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              whileHover={{ scale: 1.03, rotate: -2 }}
+              className="relative rounded-3xl overflow-hidden shadow-2xl bg-white p-2 z-10 aspect-[4/5] transition-shadow hover:shadow-[0_20px_50px_rgba(220,38,38,0.2)]"
             >
-              <img 
+              <motion.img 
+                style={{ y: imgY, scale: 1.15 }}
                 src={portrait} 
                 alt="Jens Drake - Bürgermeisterkandidat" 
-                className="w-full h-full object-cover rounded-2xl"
+                className="w-full h-full object-cover rounded-2xl origin-top"
               />
               <a href="#about" className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md p-4 rounded-xl shadow-lg border border-red-100 flex items-center justify-between group cursor-pointer hover:bg-white hover:scale-[1.02] transition-all duration-300">
                 <div>
