@@ -1,0 +1,6 @@
+{
+  "name": "Falk Studio",
+  "description": "Premium brand & design advisory website with editorial layout, value proposition, client proof, and responsive call to action.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

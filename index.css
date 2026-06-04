@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Lora", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-display: "Space Grotesk", sans-serif;
+
+  --color-brand-primary: #8C2525; /* Rose/Burgundy/Rust red similar to BCR LAW and Caffè Milani */
+  --color-brand-bg-cream: #FAF9F5; /* Premium off-white vanilla page background */
+  --color-brand-dark: #1F1916; /* Warm deep charcoal/dark brown */
+  --color-brand-gold: #C29B70; /* Matte Gold detail accents */
+}
